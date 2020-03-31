@@ -2,13 +2,8 @@
 
 C functions caller in Swift.
 
-`let markdown = "*Hello World*"`
+`let str = markdownToHTML(input: String)`
 
-`let cString = cmark_markdown_to_html(markdown, markdown.utf8.count, 0)!`
+This function is calling the C `cmark_markdown_to_html` function behind the scenes.
 
-`defer { free(cString) }`
-
-`let html = String(cString: cString)`
-
-
-///<p><em>Hello World</em></p>
+`print(str) // ///<p><em>Hello World</em></p>`
